@@ -10,12 +10,11 @@ namespace AnimeAPI
 {
     public class MALRepo : IMALRepo
     {
-        public IEnumerable<Anime> GetAnimes(string title)
+        public IEnumerable<Anime> GetAnime(string title)
         {
 
             //need to add parser for spaces (attack on titan == Attack%20on%20Titan)
             var key = System.IO.File.ReadAllText("apikey.txt");
-
             var client = new RestClient($"https://jikan1.p.rapidapi.com/search/anime?q={title}");
             var request = new RestRequest(Method.GET);
             request.AddHeader("rapidapi-key", key);

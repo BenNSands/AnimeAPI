@@ -6,8 +6,8 @@ using AnimeAPI.Models;
 
 namespace AnimeAPI
 {
-    interface IMALRepo
+    public interface IMALRepo
     {
-        public IEnumerable<Anime> GetAnimes(string title);
+        public IEnumerable<Anime> GetAnime(string title);
     }
 }
