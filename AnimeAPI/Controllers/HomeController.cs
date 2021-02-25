@@ -22,10 +22,10 @@ namespace AnimeAPI.Controllers
         {
             return View();
         }
-        public IActionResult Search(Anime anime)
+        public IActionResult Search(string title)
         {
-            anime = MALRepo.GetAnime(anime.Title);
-            return View(anime);
+            var animes = MALRepo.GetAnime(title);
+            return View(animes);
         }
 
         public IActionResult Privacy()

@@ -8,14 +8,15 @@ using RestSharp;
 
 namespace AnimeAPI
 {
-    public class MALRepo : IMALRepo
+    public static class MALRepo //: IMALRepo
     {
-        public IEnumerable<Anime> GetAnime(string title)
+        public static IEnumerable<Anime> GetAnime(string title)
         {
-
-            //need to add parser for spaces (attack on titan == Attack%20on%20Titan)
+            //Parse string
+            var parseTitle = title.Replace(" ", "%20");
+            
             var key = System.IO.File.ReadAllText("apikey.txt");
-            var client = new RestClient($"https://jikan1.p.rapidapi.com/search/anime?q={title}");
+            var client = new RestClient($"https://jikan1.p.rapidapi.com/search/anime?q={parseTitle}");
             var request = new RestRequest(Method.GET);
             request.AddHeader("rapidapi-key", key);
             request.AddHeader("x-rapidapi-host", "jikan1.p.rapidapi.com");
