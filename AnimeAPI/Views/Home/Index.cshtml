@@ -1,13 +1,19 @@
-﻿@{ 
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
 @model Anime
 
 @using (Html.BeginForm("Search", "Home", "Get"))
-{
+{<div style="display: flex; justify-content: center; align-items: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/MyAnimeList_Logo.png" alt="MAL Logo">
+    </div>
+    <div style="display: flex; justify-content:center;"><img src="https://steamuserimages-a.akamaihd.net/ugc/766102485316821756/C5E819DC5893508577DFE0F13F8A88A40E1E5C2C/" alt="padoru"></div>
+    <h1></h1>
     <input type="text" name="Title" placeholder="Search for Anime..." class="form-control" value="" />
+    <h1></h1>
     <input type="submit" value="Search" class="btn btn-primary" />
     <link rel="stylesheet" href="~/css/Searchbar.css">
-    <img src="https://media3.giphy.com/media/1jgLDGD1Bn27e/giphy.gif?cid=ecf05e47j3evb38yhesenwnx5miflwepjvve8y9i0o13vnwa&rid=giphy.gif" alt="John">
+
+
 }
