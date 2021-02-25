@@ -35,6 +35,7 @@ namespace AnimeAPI
                 foundAnime.ImgURL = (string)anime["image_url"];
                 foundAnime.URL = (string)anime["url"];
                 foundAnime.Score = (int)anime["score"];
+                foundAnime.Rated = (string)anime["rated"];
                 searchList.Add(foundAnime);
             }
             return searchList;

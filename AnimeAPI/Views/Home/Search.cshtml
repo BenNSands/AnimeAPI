@@ -1,4 +1,13 @@
-﻿@model IEnumerable<Anime>
+﻿
+@model IEnumerable<Anime>
+
+@using (Html.BeginForm("Search", "Home", "Get"))
+{
+    <input type="text" name="Title" placeholder="Search for Anime..." class="form-control" value="" />
+    <h1></h1>
+    <input type="submit" value="Search" class="btn btn-primary" />
+    <link rel="stylesheet" href="~/css/Searchbar.css">
+}
 
 <h2>Search Results</h2>
 
@@ -8,26 +17,27 @@
         <th></th>
         <th>Title</th>
         <th>MAL Score</th>
-        
+
     </tr>
     @{
-    var count = 0;
-    foreach (var ani in Model)
-    {
-        <tr>
-            <td><a href=@ani.URL><img src="@ani.ImgURL" alt="image not found"/></a></td>
-            <td><a href=@ani.URL>@ani.Title</a></td>
-            <td>@ani.Score</td>
-            
-        </tr>
-        
+        var count = 0;
+        foreach (var ani in Model)
+        {
+            if (ani.Rated == "R+" || ani.Rated == "Rx")
+            {
+                continue;
+            }
+            <tr>
+                <td><a href=@ani.URL><img src="@ani.ImgURL" alt="image not found" /></a></td>
+                <td><a href=@ani.URL>@ani.Title</a></td>
+                <td>@ani.Score</td>
+
+            </tr>
             count++;
             if (count >= 10)
             {
                 break;
             }
-        
-
-    }
+        }
     }
 </table>

@@ -12,5 +12,7 @@ namespace AnimeAPI.Models
         public string Title { get; set; }
         public int Score { get; set; }
         public int MALID { get; set; }
+        public string Rated { get; set; }
+
     }
 }
