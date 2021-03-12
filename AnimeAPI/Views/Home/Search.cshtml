@@ -1,7 +1,7 @@
 ﻿
 @model IEnumerable<Anime>
 
-@using (Html.BeginForm("Search", "Home", "Get"))
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
 {
     <input type="text" name="Title" placeholder="Search for Anime..." class="form-control" value="" />
     <h1></h1>
