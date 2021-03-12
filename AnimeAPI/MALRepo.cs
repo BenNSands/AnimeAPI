@@ -40,6 +40,7 @@ namespace AnimeAPI
             }
             return searchList;
         }
+       
 
     }
 }
